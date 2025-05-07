@@ -1,0 +1,327 @@
+DBMS
+
+prg 1
+
+CREATE TABLE Employee ( 
+EMPNO INT, 
+ENAME VARCHAR(50), 
+JOB VARCHAR(50), 
+MANAGER_NO INT, 
+SAL DECIMAL(10,2), 
+COMMISSION DECIMAL(10,2) 
+); 
+
+CREATE USER theuser IDENTIFIED BY password;
+
+GRANT ALL PRIVILEGES ON Employee TO theuser; 
+
+INSERT INTO Employee (EMPNO, ENAME, JOB, MANAGER_NO, SAL, 
+COMMISSION) VALUES 
+
+(1, 'John Doe', 'Manager', NULL, 50000.00, 5000.00), 
+(2, 'Jane Smith', 'Developer', 1, 40000.00, NULL), 
+(3, 'Michael Johnson', 'Salesperson', 1, 30000.00, 2000.00);
+
+select * from Employee
+
+ROLLBACK; 
+
+select * from Employee
+
+ALTER TABLE Employee 
+MODIFY (ENAME VARCHAR(50) NOT NULL, 
+JOB VARCHAR(50) NOT NULL, 
+SAL DECIMAL(10,2) NOT NULL); 
+
+INSERT INTO Employee (EMPNO, ENAME, JOB, MANAGER_NO, SAL, 
+COMMISSION) VALUES (NULL, 'Chris Brown', NULL, NULL, 45000.00, NULL); // error
+
+SELECT * FROM Employee;  
+
+
+prg 2
+
+CREATE TABLE Employee ( 
+EMPNO INT, 
+ENAME VARCHAR(50), 
+JOB VARCHAR(50), 
+MGR INT, 
+SAL DECIMAL(10,2) 
+); 
+
+ALTER TABLE Employee ADD COMMISSION DECIMAL(10,2);
+
+INSERT INTO Employee (EMPNO, ENAME, JOB, MGR, SAL, COMMISSION) 
+VALUES 
+(101, 'John Doe', 'Manager', NULL, 50000.00, 2000.00), 
+(102, 'Jane Smith', 'Developer', 101, 40000.00, 1500.00), 
+(103, 'Michael Johnson', 'Salesperson', 101, 30000.00, NULL), 
+(104, 'Emily Brown', 'Analyst', 102, 45000.00, 2500.00), 
+(105, 'David Lee', 'Intern', 102, 25000.00, NULL); 
+
+Select * from Employee; 
+
+UPDATE Employee 
+SET JOB = 'Senior Developer' 
+WHERE EMPNO = 102;
+
+
+ALTER TABLE Employee RENAME COLUMN EMPNO TO EMPLOYEENUMBER;
+
+DELETE FROM Employee WHERE EMPLOYEENUMBER = 105; 
+
+Select * from Employee; 
+
+
+
+
+
+Prg 3
+
+CREATE TABLE Employee ( 
+E_id INT, 
+E_name VARCHAR(50), 
+Age INT, 
+Salary DECIMAL(10,2) ); 
+
+
+INSERT INTO EMPLOYEE VALUES(1,’JOHN’,25,26000.0); 
+INSERT INTO EMPLOYEE VALUES(2,’SMITH’,29,36000.0); 
+INSERT INTO EMPLOYEE VALUES(3,’DAVID’,24,26000.0); 
+INSERT INTO EMPLOYEE VALUES(4,’PARIK’,32,40000.0); 
+INSERT INTO EMPLOYEE VALUES(5,’AKASH’,31,46000.0);
+
+SELECT * FROM EMPLOYEE; 
+
+SELECT COUNT(E_name) AS Num_of_Employees FROM Employee;
+
+
+SELECT MAX(Age) AS Max_Age FROM Employee;
+
+SELECT MIN(Age) AS Min_Age FROM Employee;
+
+SELECT E_name, Salary FROM Employee ORDER BY Salary ASC;
+
+SELECT Salary, COUNT(*) AS Num_of_Employees FROM Employee GROUP BY Salary; 
+
+
+
+
+
+
+
+prg 4
+
+
+
+CREATE TABLE CUSTOMERS ( 
+ID INT PRIMARY KEY, 
+NAME VARCHAR(100), 
+AGE INT, 
+ADDRESS VARCHAR(255), 
+SALARY DECIMAL(10, 2) 
+); 
+
+
+CREATE OR REPLACE TRIGGER salary_difference_trigger BEFORE INSERT OR UPDATE OR DELETE ON CUSTOMERS 
+FOR EACH ROW 
+	DECLARE 
+		old_salary NUMBER; 
+		new_salary NUMBER; 
+	BEGIN 
+		IF INSERTING OR UPDATING THEN 
+			old_salary := NVL(:OLD.SALARY, 0); 
+			new_salary := NVL(:NEW.SALARY, 0); 
+			DBMS_OUTPUT.PUT_LINE('Salary difference: ' || (new_salary - old_salary)); 
+		ELSIF DELETING THEN 
+			old_salary := NVL(:OLD.SALARY, 0); 
+			DBMS_OUTPUT.PUT_LINE('Salary before deletion: ' || old_salary); 
+		END IF; 
+	END; 
+
+
+SET SERVEROUTPUT ON; 
+
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY) VALUES (1, 'John Doe', 30, '123 Main St', 50000); 
+
+
+select * from customers; 
+
+Update customers set salary=70000 where id=1;
+
+select * from customers;
+
+delete from customers where id=1;
+
+select * from customers; 
+
+
+
+
+prg 5
+
+
+CREATE TABLE Employee ( 
+E_id INT PRIMARY KEY, 
+E_name VARCHAR(255), 
+Age INT, 
+Salary DECIMAL(10, 2) 
+); 
+
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (1, 'Arjun Mehta', 
+30, 55000.00); 
+
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (2, 'Priya Sharma', 
+45, 70000.00);
+
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (3, 'Ravi Kumar', 
+28, 48000.00); 
+
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (4, 'Neha Verma', 
+35, 62000.00); 
+
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (5, 'Vikram Singh', 
+40, 66000.00); 
+
+SET SERVEROUTPUT ON; 
+
+DECLARE 
+	E_id INT; 
+	E_name VARCHAR(255); 
+	Age INT; 
+	Salary DECIMAL(10, 2); 
+
+
+CURSOR employee_cursor IS 
+SELECT E_id, E_name, Age, Salary 
+FROM Employee;
+
+BEGIN 
+	OPEN employee_cursor;  
+
+
+LOOP 
+	FETCH employee_cursor INTO E_id, E_name, Age, Salary; 
+	EXIT WHEN employee_cursor%NOTFOUND; 
+
+DBMS_OUTPUT.PUT_LINE('Employee ID: ' || E_id || ', Name: ' || E_name || ',Age: ' || Age || ', Salary: ' || Salary); 
+
+END LOOP;
+
+CLOSE employee_cursor; 
+END; 
+
+
+PRG 6
+
+
+
+CREATE TABLE N_RollCall ( 
+ID NUMBER PRIMARY KEY, 
+RollNumber NUMBER NOT NULL, 
+Name VARCHAR2(100), 
+AttendanceDate DATE 
+); 
+
+CREATE TABLE O_RollCall ( 
+ID NUMBER PRIMARY KEY, 
+RollNumber NUMBER NOT NULL, 
+Name VARCHAR2(100), 
+AttendanceDate DATE 
+); 
+
+
+INSERT INTO N_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (1, 1, 'Arjun Mehta', DATE '2024-06-01');
+
+
+INSERT INTO N_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (2, 2, 'Priya Sharma', DATE '2024-06-01');
+
+
+INSERT INTO N_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (3, 3, 'Ravi Kumar', DATE '2024-06-01'); 
+
+
+INSERT INTO N_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (4, 4, 'Neha Verma', DATE '2024-06-01'); 
+
+INSERT INTO N_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (5, 5, 'Vikram Singh', DATE '2024-06-01'); 
+
+INSERT INTO O_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (1, 1, 'Arjun Mehta', DATE '2024-06-01'); 
+
+INSERT INTO O_RollCall (ID, RollNumber, Name, AttendanceDate) 
+VALUES (2, 2, 'Priya Sharma', DATE '2024-06-01');
+
+
+DECLARE 
+CURSOR c_rollcall (p_id N_ROLLCALL.id%TYPE) IS 
+SELECT * FROM N_ROLLCALL WHERE id = p_id;
+
+v_record N_ROLLCALL%ROWTYPE; 
+v_count NUMBER; 
+
+
+BEGIN 
+FOR r IN (SELECT * FROM N_ROLLCALL) LOOP
+OPEN c_rollcall(r.id); 
+FETCH c_rollcall INTO v_record;  
+
+
+IF c_rollcall%FOUND THEN 
+BEGIN 
+SELECT COUNT(*) INTO v_count FROM O_ROLLCALL WHERE id = v_record.id;  
+IF v_count = 0 THEN  
+INSERT INTO O_ROLLCALL (ID, RollNumber, Name, AttendanceDate) 
+VALUES (v_record.ID, v_record.RollNumbe, v_record.Name, v_record.AttendanceDate); 
+END IF;  
+EXCEPTION 
+WHEN NO_DATA_FOUND THEN NULL;
+END;
+END IF;
+
+CLOSE c_rollcall;
+END LOOP;
+END;
+
+
+select * from O_RollCall;
+
+
+delete from O_RollCall where id=1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
