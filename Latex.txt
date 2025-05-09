@@ -1,0 +1,240 @@
+program 7 EASY
+
+
+\documentclass{article}
+
+% Importing amsmath for better equation formatting and 'aligned' environment
+\usepackage{amsmath}
+
+\begin{document}
+
+% Title of the document
+\title{Mathematical Equations}
+\date{} % Hides the date
+\maketitle % Displays the title
+
+% Begin displayed math block
+\[
+\begin{aligned}
+    % Left side: Solving the quadratic equation using the quadratic formula
+    \begin{split}
+        x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\  % General quadratic formula
+        &= \frac{-2 \pm \sqrt{2^2 - 4 \cdot 1 \cdot (-8)}}{2 \cdot 1} \\  % Plugging in a = 1, b = 2, c = -8
+        &= \frac{-2 \pm \sqrt{4 + 32}}{2} % Simplifying under the square root
+    \end{split}
+    \quad\quad\quad
+    &
+    % Right side: Some advanced mathematical notation (possibly from representation theory or algebra)
+    \begin{split}
+        \varphi_{\sigma}^{\lambda} A_{t} 
+        &= \sum_{\pi \in \varphi_{\sigma}^{\lambda}} \varphi_{\pi}^{\lambda} \\  % Summing over permutations pi
+        &= \sum_{\tau \in C_{\sigma t} C_{t}} \operatorname{sgn}(\pi) 
+        \operatorname{sgn}(\pi^{-1}) 
+        \varphi_{\sigma}^{\lambda} 
+        \varphi_{\pi^{-1} \tau \sigma}^{\lambda} \\ % Sign functions and composition of representations
+        &= A_{\sigma t} \varphi_{\sigma}^{\lambda}  % Final simplified form
+    \end{split}
+\end{aligned}
+\]
+
+\end{document}
+
+
+
+
+
+
+
+prg 8; EASY
+
+
+\documentclass{article} 
+\usepackage{amsthm}  % for theorem environments 
+% Define theorem-like environments 
+\newtheorem{theorem}{Theorem}[section]  % Numbered within sections 
+\newtheorem{definition}[theorem]{Definition}  % Numbered along with theorems 
+\newtheorem{corollary}[theorem]{Corollary}  % Numbered along with theorems 
+\newtheorem{lemma}[theorem]{Lemma}  % Numbered along with theorems 
+\begin{document} 
+	\section{Mathematical Results} 
+	% Example usage of theorem-like environments 
+	\begin{theorem} 
+		This is a theorem statement. 
+	\end{theorem} 
+	\begin{definition} 
+		A prime number is a natural number greater than 1 that has no positive 
+		divisors other than 1 and itself. 
+	\end{definition} 
+	\begin{corollary} 
+		Every even integer greater than 2 can be expressed as the sum of two 
+		prime numbers. 
+	\end{corollary} 
+	\begin{lemma} 
+		The square of any odd integer is also odd. 
+	\end{lemma} 
+	% Numbered theorem with custom label and referencing 
+	\begin{theorem}[Fundamental Theorem of Arithmetic] 
+		Every positive integer greater than 1 can be uniquely factorized into 
+		prime factors.
+		\end{theorem} 
+		
+		\label{thm:fundamental} 
+		% Referencing a theorem 
+		As stated in Theorem \ref{thm:fundamental}, every positive integer greater than 
+		1 can be uniquely factorized into prime factors. 
+	\end{document}
+
+
+
+PRG 9 EASY
+
+\documentclass{article}
+\usepackage[numbers]{natbib} % Enables numbered citations
+
+\begin{document}
+	
+	\title{Two-Paragraph Document with Citations and Reference Section}
+	\date{}
+	\maketitle
+	
+	% ----------- Paragraph 1 -----------
+	\paragraph{Paragraph 1}
+	The theory of relativity has been explored extensively in various scientific papers \citep{author1, author2, author3}.
+	Einstein's contributions to physics are profound and have paved the way for many modern discoveries \citep{author4, author5}.
+	Researchers continue to investigate the complexities of spacetime and the universe \citep{author6, author7}.
+	These advancements have led to new methods of measurement and analysis in cosmology \citep{author8}.
+	
+	% ----------- Paragraph 2 -----------
+	\paragraph{Paragraph 2}
+	Recent studies have focused on the impact of climate change on various ecosystems \citep{author9, author10}.
+	Scientists are examining how rising temperatures and changing weather patterns affect biodiversity and human health \citep{author11, author12}.
+	Furthermore, interdisciplinary research has brought about innovative solutions for sustainable development \citep{author13}.
+	Collaboration among experts from different fields is essential to address the challenges of global warming \citep{author14}.
+	
+	% ----------- References Section -----------
+	\newpage
+	\begin{thebibliography}{99}
+		
+		\bibitem{author1} Author One. \textit{Title of Article One}. Journal Name, vol. 10, no. 1, pp. 1--10, 2022.
+		\bibitem{author2} Author Two. \textit{Title of Book Two}. Publisher Name, 2021.
+		\bibitem{author3} Author Three. \textit{Title of Conference Paper Three}. In: Proceedings of Conference, pp. 100--110, 2020.
+		\bibitem{author4} Author Four. \textit{Title of Article Four}. Journal Name, vol. 9, no. 2, pp. 15--25, 2019.
+		\bibitem{author5} Author Five. \textit{Title of Book Five}. Publisher Name, 2018.
+		\bibitem{author6} Author Six. \textit{Title of Conference Paper Six}. In: Proceedings of Conference, pp. 200--210, 2017.
+		\bibitem{author7} Author Seven. \textit{Title of Article Seven}. Journal Name, vol. 8, no. 3, pp. 30--40, 2016.
+		\bibitem{author8} Author Eight. \textit{Title of Book Eight}. Publisher Name, 2015.
+		\bibitem{author9} Author Nine. \textit{Title of Conference Paper Nine}. In: Proceedings of Conference, pp. 300--310, 2014.
+		\bibitem{author10} Author Ten. \textit{Title of Article Ten}. Journal Name, vol. 7, no. 4, pp. 50--60, 2013.
+		\bibitem{author11} Author Eleven. \textit{Title of Article Eleven}. Journal Name, vol. 6, no. 5, pp. 70--80, 2012.
+		\bibitem{author12} Author Twelve. \textit{Title of Article Twelve}. Journal Name, vol. 5, no. 6, pp. 90--100, 2011.
+		\bibitem{author13} Author Thirteen. \textit{Title of Book Thirteen}. Publisher Name, 2010.
+		\bibitem{author14} Author Fourteen. \textit{Title of Conference Paper Fourteen}. In: Proceedings of Conference, pp. 400--410, 2009.
+		
+	\end{thebibliography}
+	
+\end{document}
+
+
+
+PRG 10 EASY
+
+
+
+\documentclass{article} 
+\usepackage{tikz} 
+
+\begin{document} 
+	
+	% Start of TikZ picture 
+	\begin{tikzpicture}
+		[ 
+		level 1/.style={level distance=1.5cm, sibling distance=4cm}, 
+		level 2/.style={level distance=1.5cm, sibling distance=2cm}, 
+		level 3/.style={level distance=1.5cm, sibling distance=1.5cm} 
+		] 
+		\node {Root}
+		child {node {Child 1}
+			child {node {GrandChild 1}}
+			child {node {GrandChild 2}}
+			}
+		child {node {Child 2}
+			child {node {GrandChild 3}}
+			child {node {GrandChild 4}}
+			}
+		child {node {Child 3}
+			child {node {GC 5}}
+			child {node {GC 5}}
+			};
+	\end{tikzpicture} 
+	
+\end{document}
+
+
+
+PRG 11;
+
+
+\documentclass{article}
+\usepackage[ruled, linesnumbered]{algorithm2e}
+\begin{document}
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\SetKwFunction{LinearSearch}{LinearSearch}
+\SetKwProg{Fn}{Function}{:}{}
+\Fn{\LinearSearch{$A[1..n], x$}}{
+    \For{$i \gets 1$ \KwTo $n$}{
+        \If{$A[i] = x$}{
+            \KwRet{$i$} \tcp*{Return index if found}
+        }
+    }
+    \KwRet{$-1$} \tcp*{Return -1 if not found}
+}
+\caption{Linear Search Algorithm}
+\label{algo:linearsearch}
+\end{algorithm}
+
+\end{document}
+
+
+
+prtg 12;
+
+
+
+\documentclass{article}
+\title{Ayan ka Jivan}
+\author{kudh Ayan}
+\date{\today}
+\begin{document}
+	\maketitle
+	\section{INTRUDUCTION}
+		intro............
+	\section{Methodology}
+		meth............
+	\section{result}
+	result...............
+	\section{Conclusion}	
+		con....................
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
