@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[l]{header}
+\fancyfoot[L]{Dept of ISE}
+\fancyfoot[R]{\thepage}
+\pagestyle{fancy}
+\begin{document}
+	\section {Sec 1}
+	hi i am section one
+	\section{section 2}
+	hi i am section two
+\end{document}
