@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+
+\geometry{a4paper,margin=1in}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		
+		\includegraphics[width = 0.3\textwidth]{VTU.png}
+		\vspace{0.5cm}
+		
+		\textbf{\LARGE Project Report}
+		\vspace{1cm}
+		
+		\textbf{By}\\
+		Your Name: \\ 
+		USN : 1RN23IS\\
+		Branch ISE:\\
+		
+		\textbf{Guide:}\\ 
+		Guide Name\\ 
+		Designation\\ 
+		Department of Information Science\\ 
+		\vspace{1.5cm} 
+		
+		\textbf{Department of Information Science and Engineering}\\ 
+		College Name\\ 
+		Location\\ 
+		\vspace{1cm}
+		
+		\textbf{Date : \today}
+		
+	\end{titlepage}
+		
+\end{document}
+
