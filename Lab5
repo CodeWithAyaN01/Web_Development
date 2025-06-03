@@ -1,0 +1,29 @@
+\documentclass[a4paper]{article}
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+
+\begin{document}
+	
+	
+	\section * {Student Profile}
+	
+	\begin{table}[h]
+		\centering
+		\caption{Student Results}
+		\label{tab:stuentMarks}
+		
+		\begin{tabular}{|c|c|l|c|c|c|}
+			\hline
+			S.NO & USN & Student Name & sub1 & sub2 & sub3\\
+			\hline
+			1 & 4XX22XX001 & Name 1 & 79 & 60 & 90 \\ 
+			2 & 4XX22XX002 & Name 2 & 78 & 45 & 98 \\ 
+			3 & 4XX22XX003 & Name 3 & 36 & 75 & 59 \\ 
+			\hline
+		\end{tabular}
+		
+	\end{table}
+	
+\end{document}
