@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{setspace}
+
+\geometry{margin = 1in}
+
+\begin{document}
+	
+	\thispagestyle{empty}
+	
+	\begin{center}
+		
+		\includegraphics[width = 0.3\textwidth]{VTU.png}
+		\vspace{1cm}
+		
+		\textbf{\LARGE Certificate Completion}
+		\vspace{1cm}
+			
+	\end{center}
+	
+	\noindent
+	This is to certify that \underline{\hspace{3cm}} (Registration Number: 
+	\underline{\hspace{4cm}}) has successfully completed the course on 
+	\underline{\hspace{8cm}} conducted by the Department of \underline{\hspace{6cm}} at 
+	\underline{\hspace{8cm}}.
+	
+	\vspace{1cm}
+	
+	\noindent
+	Date: \underline{\hspace{4cm}}
+	\vfill
+	
+	\begin{flushleft}
+		Signature:\underline{\hspace{4cm}}
+	\end{flushleft}
+		
+	
+\end{document}
