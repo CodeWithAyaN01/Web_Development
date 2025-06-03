@@ -1,0 +1,34 @@
+\documentclass{article} 
+
+\usepackage{graphicx}  % for including graphics 
+\usepackage{subcaption}  % for subfigures 
+
+\begin{document} 
+	
+	\section{Side-by-Side Subfigures} 
+	
+	\begin{figure}[htbp]
+		
+		\centering 
+		
+		\begin{subfigure}{0.4\textwidth} 
+			
+			\centering 
+			\includegraphics[width=\textwidth]{VTU.png} 
+			\caption{Subfigure A} 
+			\label{fig:subfig-a} 
+		\end{subfigure} 
+		\hfill 
+		\begin{subfigure}{0.4\textwidth} 
+			\centering 
+			\includegraphics[width=\textwidth]{VTU.png}
+			\caption{Subfigure B} 
+			\label{fig:subfig-b} 
+		\end{subfigure} 
+		
+		\caption{Two Side-by-Side Subfigures} 
+		\label{fig:side-by-side} 
+		
+	\end{figure} 
+	
+\end{document}
