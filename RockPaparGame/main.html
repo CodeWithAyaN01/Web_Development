@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Game</title>
+  <link rel="stylesheet" href = "style.css">
+</head>
+<body>
+<div id = "header" class = "head"> Welcome to this game of Rock Paper scissor </div>
+<br><br>
+<div id = "btnDiv">
+    <button id = "rock" class = "gameBtn">
+      <img src="rock.png" alt="icon" width="200" height="200">
+    </button>
+    <button id = "paper" class = "gameBtn">
+        <img src="paper.png" alt="icon" width="200" height="200">
+    </button>
+    <button id = "sei" class = "gameBtn">
+        <img src="serr.png" alt="icon" width="200" height="200">
+    </button>
+</div> <br><br><br><br>
+<!--this is the score board of the game-->
+<div class = "score_board">
+    <div class = "score">
+        <h1>User :<span id ="userScore">0</span> </h1>
+    </div>
+    <br><br>
+    <div class = "score">
+        <h1>Computer :<span id ="compScore">0</span> </h1>
+    </div>
+</div>
+
+<!--message container-->
+<br><br>
+<div class = "container">
+    <div class = "outputMessage">
+        <p>Play Your Move</p>
+    </div>
+</div>
+
+
+<script src = "script.js"></script>
+</body>
+</html>
