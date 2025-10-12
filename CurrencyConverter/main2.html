@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency-Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 id ="heading">Currency Converter</h2>
+
+    <form>
+
+        <div class="amount">
+            <p>Enter Amount</p>
+            <input value ="1" type="text">
+        </div>
+
+        <div class="dropdown">
+            <div class="from">
+                <p>FROM</p>
+                <div class="select-container">
+                    <img src = "https://flagsapi.com/CL/flat/64.png">
+                    <select name="form">
+                        <!-- <option value="INR" selected >USD</option>
+                        <option value="USD">INR</option>
+                        <option value="EUR" >USD</option>
+                        <option value="AUD">AUD</option> -->
+                    </select>
+                </div>
+            </div>
+            <p>EXCHANGE</p>
+            <div class="to">
+                <p>TO</p>
+                <div class="select-container">
+                    <img src = "https://flagsapi.com/IN/flat/64.png">
+                    <select name="to">
+                        <!-- <option value="USD" selected>INR</option>
+                        <option value="INR" >USD</option>
+                        <option value="EUR" >USD</option>
+                        <option value="AUD">AUD</option> -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="msg">
+            1 USD = 85 INR
+        </div>
+        <button class ="submit">Get Exchnage Rate</button>
+
+    </form>
+
+</div>
+
+<script src = "codes.js"></script>
+<script src = "script.js"></script>
+</body>
+</html>

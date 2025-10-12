@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    font-family: 'Arial', sans-serif; /* A clear, modern fallback font */
+}
+
+/* Color Palette Variables for easy changes */
+:root {
+    --primary-color: #5d5d81; /* Deep Indigo/Purple for buttons and accents */
+    --secondary-color: #79a6d0; /* Soft Blue for a calming background */
+    --background-color: #f7f9fc; /* Off-white for container background */
+    --text-color: #333333; /* Dark gray for main text */
+    --border-color: #e0e0e0; /* Light border color */
+    --hover-color: #4a4a6b; /* Darker primary for hover state */
+    --exchange-icon-color: #000000; /* Black for the 'EXCHANGE' text */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--secondary-color); /* Soft blue background */
+}
+
+.container {
+    background-color: var(--background-color);
+    padding: 2.5rem; /* Reduced padding slightly for a tighter look */
+    border-radius: 1.5rem; /* Smoother border-radius */
+    min-height: 40vh;
+    width: clamp(300px, 90%, 450px); /* Responsive width */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+#heading {
+    font-size: 1.75rem; /* Slightly smaller, modern heading */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.amount p {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.amount input {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    height: 3rem; /* Taller input field */
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s;
+}
+
+.amount input:focus {
+    border-color: var(--primary-color); /* Highlight on focus */
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.dropdown > p {
+    color: var(--exchange-icon-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.from, .to {
+    flex-grow: 1;
+}
+
+.from p, .to p {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 0 0.5rem;
+    overflow: hidden; /* Hide potential flag overflow */
+}
+
+.select-container img {
+    max-width: 1.5rem; /* Smaller, cleaner flag size */
+    max-height: 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%; /* Make flags circular (optional) */
+}
+
+.select-container select {
+    appearance: none; /* Hide default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.msg {
+    margin: 2rem 0 1.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers all children including button */
+}
+
+
+form button {
+    height: 3rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 15px rgba(93, 93, 129, 0.4); /* Button shadow */
+}
+
+form button:hover {
+    background-color: var(--hover-color);
+}
+
+form button:active {
+    transform: scale(0.99); /* Click effect */
+}
+
+/* Ensure the form elements are styled consistently */
+form {
+    margin: 2rem 0 1rem 0;
+}
+
+form select, form button, form input {
+    border: none;
+    outline: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+    .dropdown {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+    }
+    .dropdown > p {
+        margin: 0.5rem 0;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+}
