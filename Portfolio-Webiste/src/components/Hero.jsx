@@ -166,7 +166,7 @@ export default function Hero() {
             letterSpacing: "-2px",
           }}
         >
-          <span className="text-white">Hey, I'm</span>
+          <span className="text-white">Hey, It's</span>
           <br />
           <span
             style={{
