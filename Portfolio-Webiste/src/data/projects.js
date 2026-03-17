@@ -20,7 +20,7 @@ export const projects = [
 {
     id: 1,
     title: "Drug Detection Using Ai",
-    description: "This Project helps the Doctor to croscheck if the drug given to the patient is safe for him or not",
+    description: "This Project helps the Doctor to crosscheck if the drug given to the patient is safe for him or not",
     tech: ["React", "Node.js", "MongoDB Altus", "Gemini API"],
     github: "https://github.com/yourhandle/project",
     live:   "",
